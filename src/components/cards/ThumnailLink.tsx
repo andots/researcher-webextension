@@ -19,7 +19,7 @@ const loadImage = (src: string): Promise<HTMLImageElement> => {
   });
 };
 
-const NO_IMAGE = '/assets/no_image.png';
+const NO_IMAGE = '/public/no_image.png';
 
 function ThumbnailLink({ url, imageUrl, width, height }: Props): JSX.Element {
   const [src, setSrc] = useState<string>(imageUrl ? imageUrl : NO_IMAGE);
