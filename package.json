@@ -2,7 +2,7 @@
   "name": "researcher-webextension",
   "displayName": "RE:SEARCHER",
   "description": "RE:SEARCHER is a personal search engine for your bookmarks.",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
