@@ -128,7 +128,7 @@ touch config/sudachi/sudachi.json
 
 ### 4. Start Elasticsearch
 
-Execute `bin\elasticsearch` to start Elasticsearch.
+Execute `bin/elasticsearch` to start Elasticsearch.
 
 Please see the official document to find more information.
 
