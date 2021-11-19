@@ -52,7 +52,7 @@ Please see [How to setup for Windows 10](docs/windows/README.md).
 
 Currently we only support **Elasticsearch ver. 7.10.1** for our search backend because of the plugins' dependencies. Please make sure your Elasticsearch version is **7.10.1**.
 
-Download a zip file for your platform from the official.
+Download Elasticsearch for your platform from the official.
 
 [https://www.elastic.co/downloads/past-releases/elasticsearch-7-10-1](https://www.elastic.co/downloads/past-releases/elasticsearch-7-10-1)
 
@@ -129,6 +129,10 @@ touch config/sudachi/sudachi.json
 ### 4. Start Elasticsearch
 
 Execute `bin\elasticsearch` to start Elasticsearch.
+
+Please see the official document to find more information.
+
+[Install Elasticsearch from archive on Linux or MacOS | Elasticsearch Guide \[7.15\] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html)
 
 ### 5. Create indices from our browser extension
 

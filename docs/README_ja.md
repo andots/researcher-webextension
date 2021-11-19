@@ -25,8 +25,6 @@ RE:SEARCHER はブックマークを全文検索可能にするブラウザ拡�
 
 ## Docker
 
-以下の Docker を利用するのが最も手っ取り早いですが、細かいチューニングを施したい場合や速度の面を考えると、各プラットフォームごとにマニュアルでセットアップする方が望ましいです。
-
 [https://github.com/andots/researcher-docker](https://github.com/andots/researcher-docker)
 
 ```bash
@@ -62,7 +60,7 @@ Windows ユーザーは次のページを参照してください。
 
 [https://www.elastic.co/downloads/past-releases/elasticsearch-7-10-1](https://www.elastic.co/downloads/past-releases/elasticsearch-7-10-1)
 
-ダウンロードした zip ファイルを以下のような場所に解凍して配置します。アクセス権限の問題が発生しない場所であれば、基本的にはどこでも構いません。
+ダウンロードしたファイルを以下のような場所に解凍して配置します。アクセス権限の問題が発生しない場所であれば、基本的にはどこでも構いません。
 
 `/usr/share/elasticsearch`.
 
@@ -138,7 +136,11 @@ touch config/sudachi/sudachi.json
 
 ### 4. Elasticsearch
 
-`bin\elasticsearch`を実行して、Elasticsearch を起動してください。
+`bin/elasticsearch`を実行して、Elasticsearch を起動してください。
+
+詳細については以下のオフィシャルのドキュメントを参照してください。
+
+[Install Elasticsearch from archive on Linux or MacOS | Elasticsearch Guide \[7.15\] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html)
 
 ### 5. ブラウザ拡張からインデックスを作成する
 
