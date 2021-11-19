@@ -1,0 +1,30 @@
+.json {
+  pre {
+    padding: 1em;
+    border-radius: 4px;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font: 16px Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+    line-height: 1.3em;
+    border-radius: 2px;
+    background: #282c34; // atom-one-dark
+    color: #abb2bf; // atom-one-dark
+    code {
+      border-radius: 2px;
+      background: #282c34; // atom-one-dark
+      color: #abb2bf; // atom-one-dark
+    }
+  }
+}
+
+.backdrop {
+  z-index: 10000 !important;
+}
+
+.lineClamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}

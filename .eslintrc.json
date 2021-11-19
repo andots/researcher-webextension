@@ -1,0 +1,152 @@
+{
+  "env": {
+    "webextensions": true,
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "import", "unused-imports"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "preact",
+    // ! prettier should be here
+    "prettier"
+  ],
+  "settings": {
+    "node": {
+      "tryExtensions": [".tsx"] // append tsx to the list as well
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "./tsconfig.json"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": 0,
+    "react/display-name": 0,
+    "react/prop-types": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/indent": 0,
+    "@typescript-eslint/member-delimiter-style": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    // ! no-unused-imports
+    // https://www.npmjs.com/package/eslint-plugin-unused-imports
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "no-console": [
+      0,
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports"
+      }
+    ],
+    // ! import
+    "no-duplicate-imports": "off",
+    "sort-imports": "off",
+    "import/no-duplicates": "error",
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "error",
+    "import/no-extraneous-dependencies": "warn",
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
+    "import/order": [
+      "warn",
+      {
+        "alphabetize": { "order": "asc" },
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "preact",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react", "preact"]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+    // "@typescript-eslint/no-unused-vars": [
+    //   2,
+    //   {
+    //     "argsIgnorePattern": "^_"
+    //   }
+    // ],
+    // "no-extend-native": "off",
+    // "react/jsx-props-no-spreading": "off",
+    // "jsx-a11y/label-has-associated-control": "off",
+    // "class-methods-use-this": "off",
+    // "max-classes-per-file": "off",
+    // "node/no-missing-import": "off",
+    // "node/no-unpublished-import": "off",
+    // "node/no-unsupported-features/es-syntax": [
+    //   "error",
+    //   {
+    //     "ignores": ["modules"]
+    //   }
+    // ]
+  }
+}

@@ -1,0 +1,135 @@
+.readable {
+  word-wrap: break-word;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    line-height: 1.51em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+  }
+
+  h5 {
+    font-size: 1.2em;
+  }
+
+  h6 {
+    font-size: 1.2em;
+  }
+
+  ul {
+    padding-left: 32px;
+  }
+
+  a {
+    color: #64b5f6;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0;
+    animation: fadein 0.5s ease-in forwards;
+  }
+
+  @keyframes fadein {
+    100% {
+      opacity: 1;
+    }
+  }
+
+  p {
+    line-height: 1.8em;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  p:empty {
+    display: none;
+  }
+
+  code {
+    border-radius: 2px;
+    padding: 2px;
+    background: #bfbfbf;
+    color: #000000;
+  }
+
+  pre {
+    padding: 1em;
+    border-radius: 4px;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font: 16px Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+    line-height: 1.3em;
+    code {
+      border-radius: 2px;
+      background: #282c34; // atom-one-dark
+      color: #abb2bf; // atom-one-dark
+    }
+  }
+
+  blockquote {
+    font-style: italic;
+    border-radius: 2px;
+    background: #282c34; // atom-one-dark
+    color: #abb2bf; // atom-one-dark
+    p {
+      padding: 1em;
+    }
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+    word-break: break-all;
+    word-wrap: break-word;
+    border-collapse: collapse;
+    tbody {
+      border: 1px solid #282c34;
+      width: 100%;
+    }
+    th {
+      background-color: #adadad;
+      color: #000;
+    }
+    td,
+    th {
+      padding: 4px;
+      border-collapse: collapse;
+      border: 1px solid #282c34;
+    }
+  }
+
+  .videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

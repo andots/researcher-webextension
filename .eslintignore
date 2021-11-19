@@ -1,0 +1,9 @@
+node_modules/
+dist/
+extension/
+.yarn/
+.pnp.js
+src/manifest.ts
+jest.config.js
+jest.setup.js
+.idea/
