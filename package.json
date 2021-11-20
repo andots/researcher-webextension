@@ -3,7 +3,25 @@
   "displayName": "RE:SEARCHER",
   "description": "RE:SEARCHER is a personal search engine for your bookmarks.",
   "version": "0.9.1",
-  "private": true,
+  "author": "andots",
+  "license": "MIT",
+  "homepage": "https://github.com/andots/researcher-webextension",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:andots/researcher-webextension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andots/researcher-webextension/issues"
+  },
+  "keywords": [
+    "search",
+    "bookmarks",
+    "fulltext-search",
+    "elasticsearch",
+    "react",
+    "preact",
+    "webextension"
+  ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "npm run clear && cross-env NODE_ENV=development run-p dev:*",
