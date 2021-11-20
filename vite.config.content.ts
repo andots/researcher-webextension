@@ -15,6 +15,8 @@ export default defineConfig({
       : undefined,
     outDir: r('extension/dist'),
     cssCodeSplit: false,
+    minify: 'terser',
+    brotliSize: false,
     emptyOutDir: false,
     sourcemap: isDev ? 'inline' : false,
     lib: {

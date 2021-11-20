@@ -58,10 +58,9 @@ export default defineConfig(({ command }) => {
       terserOptions: {
         mangle: false,
       },
-      // ! If disabled, all CSS in the entire project will be extracted into a single CSS file.
-      cssCodeSplit: false,
-      minify: true, // ! false to check production code
-      brotliSize: true, // ! compression
+      cssCodeSplit: false, // ! If false, all CSS in the entire project will be extracted into a single CSS file.
+      minify: 'terser',
+      brotliSize: false, // ! compression size report
       rollupOptions: {
         input: {
           app: r('src/views/app/index.html'),
