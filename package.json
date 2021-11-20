@@ -16,7 +16,8 @@
     "build:js": "vite build --config vite.config.content.ts",
     "test": "node --experimental-vm-modules jest.js",
     "clear": "rimraf extension/dist extension/manifest.json extension.*",
-    "lint": "eslint src/**/*.{json,ts,tsx,js}"
+    "lint": "eslint src/**/*.{json,ts,tsx,js}",
+    "pack:xpi": "web-ext build --artifacts-dir=./build --source-dir=./extension --overwrite-dest --no-config-discovery"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
