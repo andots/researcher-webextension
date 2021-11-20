@@ -90,7 +90,7 @@ export default defineConfig(({ command }) => {
         },
         plugins: [
           visualizer({
-            filename: '.idea/stats.html',
+            filename: 'build/stats.html',
             gzipSize: true,
             brotliSize: true,
           }),
