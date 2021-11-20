@@ -1,16 +1,18 @@
 # RE:SEARCHER
 
-[日本語 README](docs/README_ja.md)
+[日本語](docs/README_ja.md)
 
-RE:SEARCHER is a personal search engine for your bookmarks (webextension).
+RE:SEARCHER is a personal search engine for your bookmarks.
 
-- A browser extension.
+## Features of RE:SEARCHER
+
+- A browser extension (webextension).
 - All bookmarks will be saved to your local machine.
-- Full-text search title, content, and url of bookmarks powered by `Elasticsearch`.
-- Multi-languages support (English, German, Japanase, Korean, Chinese, others are analyzed as Elasticsearch default)
+- Full-text search title, content, and url of bookmarks powered by [Elasticsearch](https://github.com/elastic/elasticsearch)
+- Multi-languages support - automatically guessing the language of the content, indexing with each language analyzer. Currently supports English, German, Japanese, Korean, and Chinese. Others are analyzed as Elasticsearch default.
 - Bookmark from a browser toolbar.
-- Import bookmarks from your browser, exported bookmark html, textarea.
-- Extract only content body and simple page view with `@mozilla/readability`.
+- Import bookmarks from browser, exported bookmark html, textarea.
+- Extract only content body and simple page view with [mozilla/readability](https://github.com/mozilla/readability).
 - Automatic syntax highlighting of codes in contents.
 - Search results can be shown with OGP(Open Graph Protocol) image.
 - Mark as Read Later.
