@@ -36,7 +36,7 @@ Codes in content are automatically detected and highlighted with [highlightjs/hi
 
 ### Flexible Search Results
 
-Switch the results UI - Search engine like view, with OGP(Open Graph Protocal) image, simple title view, tiled card style.
+Switch the results UI - Search engine like view, with OGP(Open Graph Protocol) image, simple title view, tiled card style.
 
 ### Mark as Read Later
 
