@@ -4,6 +4,8 @@
 
 RE:SEARCHER is a personal search engine for your bookmarks.
 
+![screenshot](https://user-images.githubusercontent.com/18536/142749650-8a83b2d5-3124-453b-a462-a703cd139b3b.gif)
+
 ## Features of RE:SEARCHER
 
 - A browser extension (webextension).

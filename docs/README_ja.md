@@ -1,7 +1,10 @@
 # RE:SEARCHER
 
 RE:SEARCHER はブックマークを全文検索可能にするブラウザ拡張です。
-以下のような特徴があります。
+
+![screenshot](https://user-images.githubusercontent.com/18536/142749650-8a83b2d5-3124-453b-a462-a703cd139b3b.gif)
+
+## 主な機能と特徴
 
 - ブラウザ拡張。（Chrome, Firefox）
 - ブックマークは全てローカルのマシンに保存。
