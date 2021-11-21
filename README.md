@@ -28,7 +28,7 @@ Easy to bookmark from browser toolbar. Import bookmarks from your browser's book
 
 ### Extract Content Body & Simple Page View
 
-Extracts only content body of webpage as much as possible. Also, you can read articles with a simple/fast page view using [mozilla/readability](https://github.com/mozilla/readability).
+Only content body of webpage will be extracted as much as possible thanks to [mozilla/readability](https://github.com/mozilla/readability). Also, you can read articles with simple and fast page view without visiting website.
 
 ### Auto Syntax Highlighting
 
