@@ -10,7 +10,7 @@ RE:SEARCHER is a personal search engine for your bookmarks.
 
 ### Full-text Search
 
-Search title, every word of content, excerpt, and url of bookmarks powerd by [Elasticsearch](https://github.com/elastic/elasticsearch). Search box accepts Elasticsearch search_query, for example `a AND b`, `"Quick Brown Fox"`, `abc*efg`, `site:github.com`, `bookmarkedAt:[2021-10 TO 2021-11]`.
+Search title, every word of content, excerpt, and url of bookmarks powered by [Elasticsearch](https://github.com/elastic/elasticsearch). Search box accepts Elasticsearch search_query, for example `a AND b`, `"Quick Brown Fox"`, `abc*efg`, `site:github.com`, `bookmarkedAt:[2021-10 TO 2021-11]`.
 
 [Query string query | Elasticsearch Guide \[7.15\] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax)
 
