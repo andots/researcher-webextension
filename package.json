@@ -32,11 +32,12 @@
     "build:prepare": "esno scripts/prepare.ts",
     "build:web": "vite build --config vite.config.ts",
     "build:js": "vite build --config vite.config.content.ts",
+    "zip": "run-s zip:webext zip:archive",
+    "zip:webext": "web-ext build --artifacts-dir=./build --source-dir=./extension --overwrite-dest --no-config-discovery",
+    "zip:archive": "git archive --format=zip --output=./build/source.zip HEAD",
     "test": "node --experimental-vm-modules jest.js",
     "clear": "rimraf extension/dist extension/manifest.json extension.*",
-    "lint": "eslint src/**/*.{json,ts,tsx,js}",
-    "zip": "web-ext build --artifacts-dir=./build --source-dir=./extension --overwrite-dest --no-config-discovery",
-    "archive": "git archive --format=zip --output=./build/source.zip HEAD"
+    "lint": "eslint src/**/*.{json,ts,tsx,js}"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
