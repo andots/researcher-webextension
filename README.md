@@ -8,22 +8,51 @@ RE:SEARCHER is a personal search engine for your bookmarks.
 
 ## Features of RE:SEARCHER
 
-- A browser extension (webextension).
-- All bookmarks will be saved to your local machine.
-- Full-text search title, content, and url of bookmarks powered by [Elasticsearch](https://github.com/elastic/elasticsearch)
-- Multi-languages support - automatically guessing the language of the content, indexing with each language analyzer. Currently supports English, German, Japanese, Korean, and Chinese. Others are analyzed as Elasticsearch default.
-- Bookmark from a browser toolbar.
-- Import bookmarks from browser, exported bookmark html, textarea.
-- Extract only content body and simple page view with [mozilla/readability](https://github.com/mozilla/readability).
-- Automatic syntax highlighting of codes in contents.
-- Search results can be shown with OGP(Open Graph Protocol) image.
-- Mark as Read Later.
-- Filter by your favorite rank (stars).
-- Filter video bookmarks and embed official video player.
+### Full-text Search
+
+Search title, every word of content, excerpt, and url of bookmarks powerd by [Elasticsearch](https://github.com/elastic/elasticsearch). Search box accepts Elasticsearch search_query, for example `a AND b`, `"Quick Brown Fox"`, `abc*efg`, `site:github.com`, `bookmarkedAt:[2021-10 TO 2021-11]`.
+
+[Query string query | Elasticsearch Guide \[7.15\] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax)
+
+### Multilingual Index/Search Support
+
+Automatically guessing the language of the content, indexing with each language analyzer. Currently supports English, German, Japanese, Korean, and Chinese. Others are analyzed as Elasticsearch default.
+
+### All Bookmarks Saved Locally
+
+Your bookmarks will be saved to your local machine. No cloud services.
+
+### Browser Extension (WebExtension)
+
+Easy to bookmark from browser toolbar. Import bookmarks from your browser's bookmarks, exported bookmark html, textarea.
+
+### Extract Content Body & Simple Page View
+
+Extracts only content body of webpage as much as possible. Also, you can read articles with a simple/fast page view using [mozilla/readability](https://github.com/mozilla/readability).
+
+### Auto Syntax Highlighting
+
+Codes in content are automatically detected and highlighted with [highlightjs/highlight.js](https://github.com/highlightjs/highlight.js/).
+
+### Flexible Search Results
+
+Switch the results UI - Search engine like view, with OGP(Open Graph Protocal) image, simple title view, tiled card style.
+
+### Mark as Read Later
+
+Easy to filter bookmarks marked as "Read Later".
+
+### Favorite Star Rank
+
+5 stars rank of each bookmark to filter and weight search results.
+
+### Video Bookmarks
+
+Filter video bookmarks from sidebar. Official video player will be embedded on view page. Currently supports only YouTube.
 
 ## How to Setup Search Backend
 
-You need to install Elasticsearch as a search backend.
+You need to install webextension to browser and Elasticsearch as a search backend.
 
 ## Docker
 
