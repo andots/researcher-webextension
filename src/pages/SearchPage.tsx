@@ -5,14 +5,15 @@ import { useEffect, useCallback, useMemo } from 'react';
 import { Container, Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
+import browser from 'webextension-polyfill';
 
 import ErrorMessage from 'src/components/atoms/ErrorMessage';
 import TypographyText from 'src/components/atoms/TypographyText';
 import SearchResult from 'src/components/cards/SearchResult';
 import DeleteDialog from 'src/components/dialogs/DeleteDialog';
 import ReadableDialog from 'src/components/readable/ReadableDialog';
+import { SEARCH_RESULTS_SHOULD_UPDATE } from 'src/constants';
 import { useInfiniteLoad } from 'src/hooks/useInfiniteLoad';
-import useWindowFocus from 'src/hooks/useWindowFocus';
 import { scrollToTop } from 'src/libs/utils';
 import {
   getSearchHits,
@@ -34,27 +35,28 @@ function SearchPage(): JSX.Element {
   const { searchHits, totalHits, isInitialized, hasMore, isLoading, error } =
     useAppSelector((s) => s.search);
   const loader = createRef<HTMLDivElement>();
-  const focused = useWindowFocus();
 
   // ! Scroll to top when state (SearchMode) changes
   useEffect(() => {
     scrollToTop();
   }, [searchMode]);
 
-  // ! Reset api state (delete all cache) when loses focus
-  useEffect(() => {
-    if (!focused) {
-      dispatch(resetSearchCache());
-    }
-  }, [dispatch, focused]);
-
   // ! Initial fetch
   useEffect(() => {
-    if (focused) {
-      dispatch(resetSearchHits());
-      dispatch(getSearchHits(searchMode));
-    }
-  }, [dispatch, searchMode, focused]);
+    dispatch(resetSearchHits());
+    dispatch(getSearchHits(searchMode));
+  }, [dispatch, searchMode]);
+
+  // ! Listening update message from popup
+  useEffect(() => {
+    browser.runtime.onMessage.addListener((message: string) => {
+      if (message === SEARCH_RESULTS_SHOULD_UPDATE) {
+        dispatch(resetSearchCache());
+        dispatch(resetSearchHits());
+        dispatch(getSearchHits({ keywords: '' }));
+      }
+    });
+  }, [dispatch]);
 
   const loadMore = useCallback(
     async (entries) => {

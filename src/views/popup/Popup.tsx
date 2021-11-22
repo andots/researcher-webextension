@@ -22,9 +22,13 @@ import LineClampText from 'src/components/atoms/LineClampText';
 import LoadableButton from 'src/components/atoms/LoadableButton';
 import PopupAppBar from 'src/components/popup/PopupAppBar';
 import PopupEsCheck from 'src/components/popup/PopupEsCheck';
-import { GET_READABILITY_ARTICLE, INDEX_NAME } from 'src/constants';
+import {
+  GET_READABILITY_ARTICLE,
+  INDEX_NAME,
+  SEARCH_RESULTS_SHOULD_UPDATE,
+} from 'src/constants';
 import useCustomTheme from 'src/hooks/useCustomTheme';
-import { getActiveTab } from 'src/libs/browsers';
+import { getActiveTab, getAppTab } from 'src/libs/browsers';
 import { hasUrlHash, isWebUrl, prepareBookmark, removeUrlHash } from 'src/libs/utils';
 import {
   useCreateBookmarkMutation,
@@ -53,6 +57,7 @@ const Popup = (): JSX.Element => {
   const [isBookmakable, setIsBookmarkable] = useState(true);
   const [isReady, setIsReady] = useState(false);
   const [activeTab, setActiveTab] = useState<browser.Tabs.Tab>();
+  const [appTab, setAppTab] = useState<browser.Tabs.Tab | undefined>(undefined);
   const [isBookmarking, setIsBookmarking] = useState(false);
   const [esExistDoc, setEsExistDoc] = useState<ElasticSearchDoc>(undefined);
   const [showWarningUrl, setShowWarningUrl] = useState(false);
@@ -66,6 +71,15 @@ const Popup = (): JSX.Element => {
   const [updateBookmark, {}] = useUpdateBookmarkMutation();
   const [deleteBookmark, { isLoading: isDeleteBookmarkLoading }] =
     useDeleteBookmarkMutation();
+
+  // ! Find App Tab
+  useEffectOnce(() => {
+    const load = async () => {
+      const tab = await getAppTab();
+      setAppTab(tab);
+    };
+    load();
+  });
 
   // ! Check isWebUrl when the active tab is a webpage, then get Elasticsearch Doc
   useEffectOnce(() => {
@@ -114,6 +128,12 @@ const Popup = (): JSX.Element => {
     }
   };
 
+  const sendSearchResultShouldUpdate = () => {
+    if (appTab && appTab.id) {
+      browser.tabs.sendMessage(appTab.id, SEARCH_RESULTS_SHOULD_UPDATE);
+    }
+  };
+
   const handleBookmark = async (): Promise<void> => {
     if (activeTab && activeTab.id && activeTab.url) {
       const targetUrl = url ? url : activeTab.url;
@@ -138,6 +158,7 @@ const Popup = (): JSX.Element => {
             body: { doc: bookmark },
           });
           await getElasticsearchDoc(targetUrl, 'update');
+          sendSearchResultShouldUpdate();
         } else {
           await createBookmark({
             index: INDEX_NAME,
@@ -145,6 +166,7 @@ const Popup = (): JSX.Element => {
             refresh: true, // ! must refresh
           });
           await getElasticsearchDoc(targetUrl, 'create');
+          sendSearchResultShouldUpdate();
         }
       } catch (e) {
         // ! show error message
@@ -171,6 +193,7 @@ const Popup = (): JSX.Element => {
           severity: 'warning',
           title: t('Successfully deleted'),
         });
+        sendSearchResultShouldUpdate();
       }
     }
   };

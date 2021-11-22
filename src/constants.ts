@@ -21,6 +21,7 @@ export const BREAKPOINT_X_LARGE = 1536;
 
 // ! Message key
 export const GET_READABILITY_ARTICLE = 'get_readability_article';
+export const SEARCH_RESULTS_SHOULD_UPDATE = 'search_results_should_update';
 
 // ! Route
 export const ROUTE_HOME = '/';
