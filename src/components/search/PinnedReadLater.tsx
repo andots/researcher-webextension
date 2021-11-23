@@ -12,6 +12,10 @@ type Props = {
 };
 
 function PinnedReadLater({ hits }: Props): JSX.Element {
+  if (hits.length == 0) {
+    return <></>;
+  }
+
   return (
     <FlexBox flexDirection="column" sx={{ mb: 3 }}>
       <FlexBox flexDirection="row" alignItems="center" sx={{ mb: 2 }}>
