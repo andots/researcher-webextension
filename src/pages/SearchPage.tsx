@@ -45,6 +45,7 @@ function SearchPage(): JSX.Element {
   // ! Scroll to top when state (SearchMode) changes
   useEffect(() => {
     scrollToTop();
+    console.log(searchMode);
   }, [searchMode]);
 
   // ! Initial fetch
@@ -88,7 +89,9 @@ function SearchPage(): JSX.Element {
     <Container>
       <DeleteDialog onOk={(id, index) => handleAfterDelete(id, index)} />
       <ReadableDialog />
-      {readLaterHits && <PinnedReadLater hits={readLaterHits.hits.hits} />}
+      {searchMode.keywords === '' && readLaterHits && (
+        <PinnedReadLater hits={readLaterHits.hits.hits} />
+      )}
       {isInitialized && searchHits.length > 0 && (
         <Box>
           <SearchResult hits={searchHits} total={totalHits} />
