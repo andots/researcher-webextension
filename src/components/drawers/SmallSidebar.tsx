@@ -1,10 +1,10 @@
 import {
   Home,
   ImportExport,
+  PushPin,
   Settings,
   StarBorder,
   VideoLibrary,
-  WatchLaterOutlined,
 } from '@mui/icons-material';
 import { Container } from '@mui/material';
 import { useTranslation } from 'react-i18next';
@@ -47,7 +47,7 @@ function SmallSidebar({ open }: Props): JSX.Element {
           onClick={() => history.push(ROUTE_HOME)}
         />
         <SmallSidebarItem
-          icon={<WatchLaterOutlined />}
+          icon={<PushPin />}
           text={t('Read Later')}
           onClick={() => history.push(ROUTE_SEARCH, { isReadLater: true })}
         />

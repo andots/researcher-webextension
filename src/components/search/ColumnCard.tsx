@@ -65,11 +65,7 @@ function ColumnCard({ id, index, bookmarkResponse }: BookmarkResponseDoc): JSX.E
               {title}
             </Link>
           </LineClamp>
-          {isReadLater && (
-            <FlexBox style={{ marginLeft: 4 }}>
-              <PushPin />
-            </FlexBox>
-          )}
+          {isReadLater && <PushPin />}
         </Box>
       </Box>
 

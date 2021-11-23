@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 import type { SearchHit } from '@elastic/elasticsearch/api/types';
-import { WatchLaterOutlined } from '@mui/icons-material';
+import { PushPin } from '@mui/icons-material';
 import { Box, Link } from '@mui/material';
 
 import FlexBox from 'src/components/atoms/FlexBox';
@@ -62,11 +62,7 @@ function HeadlineCard({ searchHit, showImage, simple }: Props): JSX.Element {
                 {title}
               </Link>
             </LineClamp>
-            {isReadLater && (
-              <span style={{ marginLeft: 8 }}>
-                <WatchLaterOutlined color="error" />
-              </span>
-            )}
+            {isReadLater && <PushPin sx={{ ml: 1 }} />}
           </FlexBox>
 
           {!simple && <Description highlight={highlight} />}

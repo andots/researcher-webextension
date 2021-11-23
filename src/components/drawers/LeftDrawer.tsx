@@ -5,10 +5,10 @@ import {
   ExpandMore,
   Home,
   ImportExport,
+  PushPin,
   Settings,
   StarBorder,
   VideoLibrary,
-  WatchLaterOutlined,
 } from '@mui/icons-material';
 import {
   Box,
@@ -97,7 +97,7 @@ function LeftDrawer({
 
             <IconList
               headerText={t('Read Later')}
-              icon={<WatchLaterOutlined />}
+              icon={<PushPin />}
               onClick={() => history.push(ROUTE_SEARCH, { isReadLater: true })}
             />
 
