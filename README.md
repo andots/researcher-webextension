@@ -36,11 +36,11 @@ Codes in content are automatically detected and highlighted with [highlightjs/hi
 
 ### Flexible Search Results
 
-Switch the results UI - Search engine like view, with OGP(Open Graph Protocol) image, simple title view, tiled card style.
+Switch the results UI - Search engine like view, with OGP(Open Graph Protocol) image, simple favicon and title view, tiled card style.
 
 ### Mark as Read Later
 
-Easy to filter bookmarks marked as "Read Later".
+Bookmarks marked as "Read Later" will be pinned on the top of Home. Also, you can easily find articles by the query `isReadLater:true` or pushpin icon on sidebar menu.
 
 ### Favorite Star Rank
 
