@@ -3,8 +3,8 @@ import { List, ViewColumn, ViewHeadline, ViewList } from '@mui/icons-material';
 import { Grid, IconButton, Box } from '@mui/material';
 
 import FlexBox from 'src/components/atoms/FlexBox';
-import ColumnCard from 'src/components/cards/ColumnCard';
-import HeadlineCard from 'src/components/cards/HeadlineCard';
+import ColumnCard from 'src/components/search/ColumnCard';
+import HeadlineCard from 'src/components/search/HeadlineCard';
 import { numberWithCommas } from 'src/libs/utils';
 import { setListViewType } from 'src/redux/slices/settingSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';

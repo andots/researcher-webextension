@@ -8,8 +8,8 @@ import { useTranslation } from 'react-i18next';
 
 import FlexBox from 'src/components/atoms/FlexBox';
 import TypographyText from 'src/components/atoms/TypographyText';
-import Favicon from 'src/components/cards/Favicon';
 import MyRating from 'src/components/controls/MyRating';
+import Favicon from 'src/components/search/Favicon';
 import { openDeleteDialog } from 'src/redux/slices/deleteDialogSlice';
 import { openReadable } from 'src/redux/slices/readableSlice';
 import { useAppDispatch } from 'src/redux/store';

@@ -19,7 +19,7 @@ import {
 import FlexBox from 'src/components/atoms/FlexBox';
 import LineClamp from 'src/components/atoms/LineClamp';
 import LineClampText from 'src/components/atoms/LineClampText';
-import ThumbnailLink from 'src/components/cards/ThumnailLink';
+import ThumbnailLink from 'src/components/search/ThumnailLink';
 import { openDeleteDialog } from 'src/redux/slices/deleteDialogSlice';
 import { openReadable } from 'src/redux/slices/readableSlice';
 import { useAppDispatch } from 'src/redux/store';

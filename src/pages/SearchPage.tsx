@@ -9,9 +9,9 @@ import browser from 'webextension-polyfill';
 
 import ErrorMessage from 'src/components/atoms/ErrorMessage';
 import TypographyText from 'src/components/atoms/TypographyText';
-import SearchResult from 'src/components/cards/SearchResult';
 import DeleteDialog from 'src/components/dialogs/DeleteDialog';
 import ReadableDialog from 'src/components/readable/ReadableDialog';
+import SearchResult from 'src/components/search/SearchResult';
 import { SEARCH_RESULTS_SHOULD_UPDATE } from 'src/constants';
 import { useInfiniteLoad } from 'src/hooks/useInfiniteLoad';
 import { scrollToTop } from 'src/libs/utils';

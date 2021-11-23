@@ -6,9 +6,9 @@ import { Box, Link } from '@mui/material';
 
 import FlexBox from 'src/components/atoms/FlexBox';
 import LineClamp from 'src/components/atoms/LineClamp';
-import BookmarkActions from 'src/components/cards/BookmarkActions';
-import Description from 'src/components/cards/Description';
-import ThumbnailLink from 'src/components/cards/ThumnailLink';
+import BookmarkActions from 'src/components/search/BookmarkActions';
+import Description from 'src/components/search/Description';
+import ThumbnailLink from 'src/components/search/ThumnailLink';
 import { getDecodedShortURL } from 'src/libs/utils';
 import type { BookmarkResponse } from 'src/types';
 
