@@ -15,6 +15,18 @@ export const urlTermQuery = (str: string): SearchBody => {
   };
 };
 
+export const getReadLaterQueryBody = (): SearchBody => {
+  return {
+    query: {
+      term: {
+        isReadLater: true,
+      },
+    },
+    sort: [{ bookmarkedAt: 'desc' }],
+    _source: ['title', 'url', 'site'],
+  };
+};
+
 export const getSearchBody = (mode: SearchMode): SearchBody => {
   // ! common body
   let body: SearchBody = {

@@ -11,10 +11,13 @@ import ErrorMessage from 'src/components/atoms/ErrorMessage';
 import TypographyText from 'src/components/atoms/TypographyText';
 import DeleteDialog from 'src/components/dialogs/DeleteDialog';
 import ReadableDialog from 'src/components/readable/ReadableDialog';
+import PinnedReadLater from 'src/components/search/PinnedReadLater';
 import SearchResult from 'src/components/search/SearchResult';
 import { SEARCH_RESULTS_SHOULD_UPDATE } from 'src/constants';
 import { useInfiniteLoad } from 'src/hooks/useInfiniteLoad';
 import { scrollToTop } from 'src/libs/utils';
+import { useSearchQuery } from 'src/redux/services/elasticsearch/api';
+import { getReadLaterQueryBody } from 'src/redux/services/elasticsearch/config/queries';
 import {
   getSearchHits,
   removeSearchHit,
@@ -35,6 +38,9 @@ function SearchPage(): JSX.Element {
   const { searchHits, totalHits, isInitialized, hasMore, isLoading, error } =
     useAppSelector((s) => s.search);
   const loader = createRef<HTMLDivElement>();
+
+  // Pinned read later
+  const { data: readLaterHits } = useSearchQuery({ body: getReadLaterQueryBody() });
 
   // ! Scroll to top when state (SearchMode) changes
   useEffect(() => {
@@ -82,6 +88,7 @@ function SearchPage(): JSX.Element {
     <Container>
       <DeleteDialog onOk={(id, index) => handleAfterDelete(id, index)} />
       <ReadableDialog />
+      {readLaterHits && <PinnedReadLater hits={readLaterHits.hits.hits} />}
       {isInitialized && searchHits.length > 0 && (
         <Box>
           <SearchResult hits={searchHits} total={totalHits} />
