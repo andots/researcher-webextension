@@ -31,7 +31,7 @@ function SearchResult({ hits, total }: Props): JSX.Element {
         <FlexBox flexDirection="row" alignItems="center">
           <Search sx={{ mr: 1 }} />
           <TypographyText
-            text={`${numberWithCommas(total, 0)} results found.`}
+            text={`${numberWithCommas(total, 0)} Results Found.`}
             variant="h2"
           />
         </FlexBox>
