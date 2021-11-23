@@ -7,7 +7,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import {
   CONFIG_INDEX_NAME,
-  CURRENT_VERSION,
+  CURRENT_MAPPING_VERSION,
   RESEARCHER_PIPELINE_NAME,
   INDICES,
   ELASTICSEARCH_VERSION,
@@ -89,7 +89,7 @@ export const validateElasticsearch = createAsyncThunk<void>(
       const exists = await dispatch(existsIndices()).unwrap();
       if (config && exists) {
         dispatch(setMappingVersion(config.version));
-        if (config.version === CURRENT_VERSION) {
+        if (config.version === CURRENT_MAPPING_VERSION) {
           dispatch(setIsReady(true));
         } else {
           // ! mapping version is old, so migration is required
@@ -153,7 +153,7 @@ export const createConfigIndex = createAsyncThunk<void>(
     );
     await dispatch(
       ElasticSearchApi.endpoints.createConfig.initiate({
-        body: { version: CURRENT_VERSION },
+        body: { version: CURRENT_MAPPING_VERSION },
       }),
     );
   },
@@ -336,7 +336,7 @@ export const migrateV1ToV2 = (): AppThunk => async (dispatch) => {
   const config = await dispatch(loadConfig()).unwrap();
   if (config) {
     const oldVersion = config.version;
-    const newVersion = CURRENT_VERSION;
+    const newVersion = CURRENT_MAPPING_VERSION;
     await dispatch(createIndices({ version: newVersion }));
     const promises = INDICES.map((a) => {
       return limit1(async () => {
@@ -374,7 +374,7 @@ export const reindex = (): AppThunk => async (dispatch) => {
   const config = await dispatch(loadConfig()).unwrap();
   if (config) {
     const oldVersion = config.version;
-    const newVersion = CURRENT_VERSION;
+    const newVersion = CURRENT_MAPPING_VERSION;
     await dispatch(createIndices({ version: newVersion }));
     const promises = INDICES.map((a) => {
       return limit1(async () => {
@@ -409,7 +409,7 @@ export const reindexV3ToV4 = (): AppThunk => async (dispatch) => {
   const config = await dispatch(loadConfig()).unwrap();
   if (config) {
     const oldVersion = config.version;
-    const newVersion = CURRENT_VERSION;
+    const newVersion = CURRENT_MAPPING_VERSION;
     await dispatch(createIndices({ version: newVersion }));
     const pipelineId = 'decodeuri';
     await dispatch(

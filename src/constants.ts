@@ -34,7 +34,7 @@ export const ELASTICSEARCH_VERSION = '7.10.1';
 export const INDEX_NAME = 'researcher';
 export const RESEARCHER_PIPELINE_NAME = 'researcher_pipeline';
 export const CONFIG_INDEX_NAME = 'd_researcher_config';
-export const CURRENT_VERSION = 'v4';
+export const CURRENT_MAPPING_VERSION = 'v4';
 export const INDICES: Index[] = [
   { lang: 'unknown', analyzerName: 'default', aliasName: `${INDEX_NAME}` },
   { lang: 'en', analyzerName: 'english', aliasName: `${INDEX_NAME}_en` },

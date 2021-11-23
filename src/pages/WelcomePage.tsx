@@ -8,7 +8,7 @@ import { useToggle } from 'react-use';
 import FlexBox from 'src/components/atoms/FlexBox';
 import LoadableButton from 'src/components/atoms/LoadableButton';
 import TypographyText from 'src/components/atoms/TypographyText';
-import { CURRENT_VERSION } from 'src/constants';
+import { CURRENT_MAPPING_VERSION } from 'src/constants';
 import {
   createAliases,
   createConfigIndex,
@@ -29,8 +29,8 @@ function WelcomePage(): JSX.Element {
   const handleCreate = async () => {
     setIsLoading(true);
     await dispatch(createConfigIndex());
-    await dispatch(createIndices({ version: CURRENT_VERSION }));
-    await dispatch(createAliases({ version: CURRENT_VERSION }));
+    await dispatch(createIndices({ version: CURRENT_MAPPING_VERSION }));
+    await dispatch(createAliases({ version: CURRENT_MAPPING_VERSION }));
     setIsLoading(false);
     dispatch(validateElasticsearch());
   };
