@@ -5,6 +5,7 @@ import { Grid, IconButton, Box } from '@mui/material';
 import FlexBox from 'src/components/atoms/FlexBox';
 import ColumnCard from 'src/components/search/ColumnCard';
 import HeadlineCard from 'src/components/search/HeadlineCard';
+import SimpleItem from 'src/components/search/SimpleItem';
 import { numberWithCommas } from 'src/libs/utils';
 import { setListViewType } from 'src/redux/slices/settingSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';
@@ -72,7 +73,7 @@ function SearchResult({ hits, total }: Props): JSX.Element {
             } else if (listViewType === 'simple') {
               return (
                 <Grid key={item._source.url} xs={12} item>
-                  <HeadlineCard searchHit={item} showImage={false} simple />
+                  <SimpleItem searchHit={item} />
                 </Grid>
               );
             } else if (listViewType === 'imageHeadline') {
