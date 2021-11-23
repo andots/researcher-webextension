@@ -2,7 +2,7 @@
   "name": "researcher-webextension",
   "displayName": "RE:SEARCHER",
   "description": "RE:SEARCHER is a personal search engine for your bookmarks.",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "author": "andots",
   "license": "MIT",
   "homepage": "https://github.com/andots/researcher-webextension",
