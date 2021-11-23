@@ -74,7 +74,11 @@ function ReadableArticle({ id, index, bookmarkResponse }: Props): JSX.Element {
     _event: React.ChangeEvent<HTMLInputElement>,
     checked: boolean,
   ) => {
-    updateBookmark({ id, index, body: { doc: { isReadLater: checked } } });
+    updateBookmark({
+      id,
+      index,
+      body: { doc: { isReadLater: checked, bookmarkedAt: new Date().toISOString() } },
+    });
     setIsReadLater(checked);
     dispatch(updateSearchHit({ id, index, patch: { isReadLater: checked } }));
   };
