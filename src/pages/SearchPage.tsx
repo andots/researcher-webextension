@@ -2,12 +2,14 @@ import { createRef } from 'preact';
 
 import { useEffect, useCallback, useMemo } from 'react';
 
+import { Search } from '@mui/icons-material';
 import { Container, Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import browser from 'webextension-polyfill';
 
 import ErrorMessage from 'src/components/atoms/ErrorMessage';
+import FlexBox from 'src/components/atoms/FlexBox';
 import TypographyText from 'src/components/atoms/TypographyText';
 import DeleteDialog from 'src/components/dialogs/DeleteDialog';
 import ReadableDialog from 'src/components/readable/ReadableDialog';
@@ -111,7 +113,10 @@ function SearchPage(): JSX.Element {
         </Box>
       )}
       {isInitialized && searchHits.length === 0 && (
-        <TypographyText variant="body1" text={t('Nothing found.')} />
+        <FlexBox flexDirection="row" alignItems="center">
+          <Search sx={{ mr: 1 }} />
+          <TypographyText text={t('Nothing found.')} variant="h2" />
+        </FlexBox>
       )}
     </Container>
   );
