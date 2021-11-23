@@ -5,6 +5,7 @@ export const APP_NAME = 'RE:SEARCHER';
 // ! Theme Variables
 export const NAVBAR_HEIGHT = '70px';
 export const LEFT_DRAWER_WIDTH = '200px';
+export const LEFT_DRAWER_ICON_WIDTH = '42px';
 export const LEFT_DRAWER_SECONDARY_WIDTH = '74px';
 export const APP_BORDER_RADIUS = '2px';
 

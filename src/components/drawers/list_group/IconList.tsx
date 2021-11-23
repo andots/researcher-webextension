@@ -1,6 +1,7 @@
 import { ListItem, ListItemIcon } from '@mui/material';
 
 import TypographyText from 'src/components/atoms/TypographyText';
+import { LEFT_DRAWER_ICON_WIDTH } from 'src/constants';
 
 type Props = {
   headerText: string;
@@ -22,7 +23,7 @@ function IconList({ headerText, icon, onClick }: Props): JSX.Element {
       }}
       button
       onClick={handleClick}>
-      <ListItemIcon>{icon}</ListItemIcon>
+      <ListItemIcon sx={{ minWidth: LEFT_DRAWER_ICON_WIDTH }}>{icon}</ListItemIcon>
       <TypographyText text={headerText} variant="overline" />
     </ListItem>
   );

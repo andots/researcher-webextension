@@ -26,6 +26,7 @@ import { useHistory } from 'react-router-dom';
 import BrandMenuLogo from 'src/components/drawers/BrandMenuLogo';
 import IconList from 'src/components/drawers/list_group/IconList';
 import {
+  LEFT_DRAWER_ICON_WIDTH,
   LEFT_DRAWER_WIDTH,
   NAVBAR_HEIGHT,
   ROUTE_HOME,
@@ -71,7 +72,6 @@ function LeftDrawer({
         transitionDuration={0}
         elevation={0}
         onClose={() => onClose()}>
-        {/* <CustomScrollbar width={LEFT_DRAWER_WIDTH}> */}
         {displayBrandHead && (
           <Box
             sx={{
@@ -88,7 +88,7 @@ function LeftDrawer({
           }}>
           {!displayBrandHead && <Box height={NAVBAR_HEIGHT} />}
 
-          <List>
+          <List sx={{ paddingTop: 0 }}>
             <IconList
               headerText={t('Home')}
               icon={<Home />}
@@ -102,7 +102,7 @@ function LeftDrawer({
             />
 
             <ListItemButton onClick={handleToggleStarMenu}>
-              <ListItemIcon>
+              <ListItemIcon sx={{ minWidth: LEFT_DRAWER_ICON_WIDTH }}>
                 <StarBorder />
               </ListItemIcon>
               <ListItemText primary={t('Stars')} />
@@ -142,7 +142,6 @@ function LeftDrawer({
             />
           </List>
         </Box>
-        {/* </CustomScrollbar> */}
       </Drawer>
     </>
   );
