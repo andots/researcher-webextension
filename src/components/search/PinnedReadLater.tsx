@@ -13,8 +13,8 @@ type Props = {
 
 function PinnedReadLater({ hits }: Props): JSX.Element {
   return (
-    <FlexBox flexDirection="column" sx={{ mb: 2 }}>
-      <FlexBox flexDirection="row" alignItems="center" sx={{ mb: 1 }}>
+    <FlexBox flexDirection="column" sx={{ mb: 3 }}>
+      <FlexBox flexDirection="row" alignItems="center" sx={{ mb: 2 }}>
         <PushPin sx={{ mr: 1 }} />
         <TypographyText text="Pinned Read Later" variant="h2" />
       </FlexBox>

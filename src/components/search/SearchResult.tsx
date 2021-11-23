@@ -1,8 +1,9 @@
 import type { SearchHit } from '@elastic/elasticsearch/api/types';
-import { List, ViewColumn, ViewHeadline, ViewList } from '@mui/icons-material';
+import { List, Search, ViewColumn, ViewHeadline, ViewList } from '@mui/icons-material';
 import { Grid, IconButton, Box } from '@mui/material';
 
 import FlexBox from 'src/components/atoms/FlexBox';
+import TypographyText from 'src/components/atoms/TypographyText';
 import ColumnCard from 'src/components/search/ColumnCard';
 import HeadlineCard from 'src/components/search/HeadlineCard';
 import SimpleItem from 'src/components/search/SimpleItem';
@@ -26,9 +27,13 @@ function SearchResult({ hits, total }: Props): JSX.Element {
 
   return (
     <Box mb={2}>
-      <FlexBox alignItems="center" justifyContent="space-between">
-        <FlexBox>
-          <p>Hits {numberWithCommas(total, 0)} results.</p>
+      <FlexBox alignItems="center" justifyContent="space-between" sx={{ mb: 1 }}>
+        <FlexBox flexDirection="row" alignItems="center">
+          <Search sx={{ mr: 1 }} />
+          <TypographyText
+            text={`${numberWithCommas(total, 0)} results found.`}
+            variant="h2"
+          />
         </FlexBox>
         <FlexBox>
           <IconButton onClick={() => handleListViewClick('headline')} size="large">

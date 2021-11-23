@@ -22,9 +22,9 @@ function SimpleItem({ searchHit }: Props): JSX.Element {
   const { url, title, site } = source;
 
   return (
-    <FlexBox flexDirection="row" alignItems="center">
+    <FlexBox flexDirection="row" alignItems="center" sx={{ paddingLeft: '2px' }}>
       <Favicon site={site} size={18} />
-      <Box mr={1} />
+      <Box mr={1.5} />
       <LineClamp lineClamp={1}>
         <Link
           href={url}
