@@ -4,7 +4,7 @@ import {
   BookmarkBorderOutlined,
   HighlightOff,
   PageviewOutlined,
-  WatchLaterOutlined,
+  PushPin,
 } from '@mui/icons-material';
 import {
   Box,
@@ -43,45 +43,33 @@ function ColumnCard({ id, index, bookmarkResponse }: BookmarkResponseDoc): JSX.E
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          paddingTop: 1,
           paddingLeft: 2,
-          paddingRight: 2,
-          paddingBottom: 1,
+          paddingRight: 1,
         }}>
         <Box
           sx={{
+            minHeight: 80,
+            maxHeight: 80,
             display: 'flex',
-            flexDirection: 'row',
             alignItems: 'center',
-            alignContent: 'center',
-            width: '100%',
-            justifyContent: 'flex-start',
+            justifyContent: 'space-between',
           }}>
-          <Box
-            sx={{
-              minHeight: 80,
-              maxHeight: 80,
-              display: 'flex',
-              alignItems: 'center',
-            }}>
-            <LineClamp lineClamp={2}>
-              <Link
-                href={url}
-                target="_blank"
-                rel="noopener"
-                variant="h4"
-                underline="hover"
-                color="textPrimary">
-                {title}
-              </Link>
-            </LineClamp>
-            {isReadLater && (
-              <FlexBox style={{ marginRight: 4 }}>
-                <WatchLaterOutlined color="error" />
-              </FlexBox>
-            )}
-          </Box>
+          <LineClamp lineClamp={2}>
+            <Link
+              href={url}
+              target="_blank"
+              rel="noopener"
+              variant="h5"
+              underline="hover"
+              color="textPrimary">
+              {title}
+            </Link>
+          </LineClamp>
+          {isReadLater && (
+            <FlexBox style={{ marginLeft: 4 }}>
+              <PushPin />
+            </FlexBox>
+          )}
         </Box>
       </Box>
 
