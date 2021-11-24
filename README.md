@@ -50,6 +50,12 @@ Bookmarks marked as "Read Later" will be pinned on the top of Home. Also, you ca
 
 Filter video bookmarks from sidebar. Official video player will be embedded on view page. Currently supports only YouTube.
 
+## Install WebExtension
+
+[![Fx-Browser-icon-fullColor-128](https://user-images.githubusercontent.com/18536/143271864-8bd82d4b-a5df-431b-bafb-6cbf04194a3e.png)](https://addons.mozilla.org/en-US/firefox/addon/researcher-bookmarks/)
+
+[Firefox Addon Page](https://addons.mozilla.org/en-US/firefox/addon/researcher-bookmarks/)
+
 ## How to Setup Search Backend
 
 You need to install webextension to browser and Elasticsearch as a search backend.

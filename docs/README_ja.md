@@ -55,6 +55,14 @@ RE:SEARCHER はブックマークを全文検索可能にするブラウザ拡�
 拡張機能をブラウザにインストールするほかに、検索のバックエンドとして Elasticsearch をインストールする必要があります。
 以下にセットアップの手順を示します。
 
+## 拡張機能のインストール
+
+各ブラウザごとに拡張機能をインストールしてください。
+
+[![Fx-Browser-icon-fullColor-128](https://user-images.githubusercontent.com/18536/143271864-8bd82d4b-a5df-431b-bafb-6cbf04194a3e.png)](https://addons.mozilla.org/en-US/firefox/addon/researcher-bookmarks/)
+
+[Firefox はこちら](https://addons.mozilla.org/en-US/firefox/addon/researcher-bookmarks/)
+
 ## Docker
 
 [https://github.com/andots/researcher-docker](https://github.com/andots/researcher-docker)
