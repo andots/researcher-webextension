@@ -4,7 +4,7 @@
 
 RE:SEARCHER is a personal search engine for your bookmarks.
 
-![screenshot](https://user-images.githubusercontent.com/18536/142749650-8a83b2d5-3124-453b-a462-a703cd139b3b.gif)
+![screenshot](https://user-images.githubusercontent.com/18536/143283101-11288c47-88d1-4354-a92a-35768c53d206.gif)
 
 ## Features of RE:SEARCHER
 
