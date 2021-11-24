@@ -42,11 +42,11 @@ function SearchResult({ hits, total }: Props): JSX.Element {
           <IconButton onClick={() => handleListViewClick('imageHeadline')} size="large">
             <ViewList />
           </IconButton>
-          <IconButton onClick={() => handleListViewClick('simple')} size="large">
-            <List />
-          </IconButton>
           <IconButton onClick={() => handleListViewClick('column')} size="large">
             <ViewColumn />
+          </IconButton>
+          <IconButton onClick={() => handleListViewClick('simple')} size="large">
+            <List />
           </IconButton>
         </FlexBox>
       </FlexBox>
