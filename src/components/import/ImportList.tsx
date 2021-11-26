@@ -27,6 +27,7 @@ import {
   setBackdropOpen,
   updateImportResult,
 } from 'src/redux/slices/importSlice';
+import { resetSearchCacheAndHits } from 'src/redux/slices/searchSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';
 import type { ImportResult } from 'src/types';
 
@@ -118,6 +119,7 @@ function ImportList(): JSX.Element {
     dispatch(setBackdropOpen(true));
     await Promise.all(promises);
     dispatch(orderImportResults());
+    dispatch(resetSearchCacheAndHits());
     dispatch(setBackdropOpen(false));
   };
 
