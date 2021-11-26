@@ -23,7 +23,7 @@ import { getReadLaterQueryBody } from 'src/redux/services/elasticsearch/config/q
 import {
   getSearchHits,
   removeSearchHit,
-  resetSearchCache,
+  resetSearchCacheAndHits,
   resetSearchHits,
 } from 'src/redux/slices/searchSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/store';
@@ -60,8 +60,7 @@ function SearchPage(): JSX.Element {
   useEffect(() => {
     browser.runtime.onMessage.addListener((message: string) => {
       if (message === SEARCH_RESULTS_SHOULD_UPDATE) {
-        dispatch(resetSearchCache());
-        dispatch(resetSearchHits());
+        dispatch(resetSearchCacheAndHits());
         dispatch(getSearchHits({ keywords: '' }));
       }
     });

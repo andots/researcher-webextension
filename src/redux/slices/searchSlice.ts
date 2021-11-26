@@ -130,7 +130,9 @@ export const getSearchHits =
     dispatch(setIsLoading(false));
   };
 
-// This will immediately remove all existing cache entries, and all queries will be considered 'uninitialized'.
-export const resetSearchCache = (): AppThunk => async (dispatch) => {
+// ! Reset cache and search hits.
+// ! This will immediately remove all existing cache entries, and all queries will be considered 'uninitialized'.
+export const resetSearchCacheAndHits = (): AppThunk => async (dispatch) => {
   dispatch(ElasticSearchApi.util.resetApiState());
+  dispatch(resetSearchHits());
 };
