@@ -5,6 +5,7 @@ import {
   BookmarkBorderOutlined,
   CancelOutlined,
   PushPin,
+  PushPinOutlined,
 } from '@mui/icons-material';
 import {
   Box,
@@ -20,13 +21,16 @@ import FlexBox from 'src/components/atoms/FlexBox';
 import LineClamp from 'src/components/atoms/LineClamp';
 import LineClampText from 'src/components/atoms/LineClampText';
 import ThumbnailLink from 'src/components/search/ThumnailLink';
+import { useUpdateBookmarkMutation } from 'src/redux/services/elasticsearch/api';
 import { openDeleteDialog } from 'src/redux/slices/deleteDialogSlice';
 import { openReadable } from 'src/redux/slices/readableSlice';
+import { updateSearchHit } from 'src/redux/slices/searchSlice';
 import { useAppDispatch } from 'src/redux/store';
 import type { BookmarkResponseDoc } from 'src/types';
 
 function ColumnCard({ id, index, bookmarkResponse }: BookmarkResponseDoc): JSX.Element {
   const dispatch = useAppDispatch();
+  const [updateBookmark, {}] = useUpdateBookmarkMutation();
   const { title, excerpt, url, ogImage, bookmarkedAt, isReadLater } = bookmarkResponse;
 
   const handleDeleteButtonClicked = () => {
@@ -35,6 +39,15 @@ function ColumnCard({ id, index, bookmarkResponse }: BookmarkResponseDoc): JSX.E
 
   const handleGoReadable = () => {
     dispatch(openReadable({ id, index, bookmarkResponse }));
+  };
+
+  const handleToggleReadLater = () => {
+    updateBookmark({
+      id,
+      index,
+      body: { doc: { isReadLater: !isReadLater } },
+    });
+    dispatch(updateSearchHit({ id, index, patch: { isReadLater: !isReadLater } }));
   };
 
   return (
@@ -65,7 +78,6 @@ function ColumnCard({ id, index, bookmarkResponse }: BookmarkResponseDoc): JSX.E
               {title}
             </Link>
           </LineClamp>
-          {isReadLater && <PushPin />}
         </Box>
       </Box>
 
@@ -107,10 +119,12 @@ function ColumnCard({ id, index, bookmarkResponse }: BookmarkResponseDoc): JSX.E
         </Box>
 
         <FlexBox flexDirection="row">
+          <IconButton size="small" onClick={handleToggleReadLater}>
+            {isReadLater ? <PushPin /> : <PushPinOutlined />}
+          </IconButton>
           <IconButton size="small" onClick={handleGoReadable}>
             <ArticleOutlined />
           </IconButton>
-          <Box mr={1} />
           <IconButton size="small" onClick={handleDeleteButtonClicked}>
             <CancelOutlined />
           </IconButton>
