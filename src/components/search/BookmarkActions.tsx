@@ -108,9 +108,8 @@ function BookmarkActions({
             color="inherit"
             startIcon={<PageviewOutlined />}
             onClick={handleGoReadable}>
-            {t('Quick View')}
+            {t('View')}
           </Button>
-          <Box mr={1} />
           <Button
             size="small"
             color="inherit"

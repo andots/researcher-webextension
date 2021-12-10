@@ -14,7 +14,7 @@
   "Close": "Close",
   "error occurred": "Error occurred!",
   "general error": "Your ElasticSearch server isn't started or hasn't been setup yet?",
-  "Quick View": "Quick View",
+  "View": "View",
   "Pin": "Pin",
   "Pinned": "Pinned",
   "URL has hash": "URL has hash query. Do you want to remove it to prevent duplicate records?",

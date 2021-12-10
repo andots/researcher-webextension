@@ -14,7 +14,7 @@
   "Close": "閉じる",
   "error occurred": "エラーが発生しました",
   "general error": "ElasticSearchが起動されていないか、まだセットアップされていないようです。",
-  "Quick View": "Quick View",
+  "View": "View",
   "Pin": "Pin",
   "Pinned": "Pinned",
   "URL has hash": "URLに#タグがあります。重複レコードを避けるために除去しますか？",
