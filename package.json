@@ -37,7 +37,8 @@
     "zip:archive": "git archive --format=zip --output=./build/source.zip HEAD",
     "test": "node --experimental-vm-modules jest.js",
     "clear": "rimraf extension/dist extension/manifest.json extension.*",
-    "lint": "eslint src/**/*.{json,ts,tsx,js}"
+    "lint": "eslint src/**/*.{json,ts,tsx,js}",
+    "release": "run-s build zip"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
