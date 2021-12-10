@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { HighlightOff, Star } from '@mui/icons-material';
+import { CancelOutlined, Star } from '@mui/icons-material';
 import type { AlertColor } from '@mui/material';
 import {
   Checkbox,
@@ -230,7 +230,7 @@ const Popup = (): JSX.Element => {
             color="error"
             onClick={handleDeleteBookmark}
             isLoading={isDeleteBookmarkLoading || isBookmarking}
-            startIcon={<HighlightOff />}
+            startIcon={<CancelOutlined />}
           />
           <Box mr={2} />
           <LoadableButton

@@ -1,7 +1,7 @@
 import {
   BookmarkBorderOutlined,
   PageviewOutlined,
-  HighlightOff,
+  CancelOutlined,
 } from '@mui/icons-material';
 import { Link, Box, Button, useTheme, useMediaQuery, IconButton } from '@mui/material';
 import { useTranslation } from 'react-i18next';
@@ -74,7 +74,7 @@ function BookmarkActions({
             <PageviewOutlined />
           </IconButton>
           <IconButton onClick={handleDeleteButtonClicked}>
-            <HighlightOff />
+            <CancelOutlined />
           </IconButton>
         </FlexBox>
       ) : (
@@ -90,7 +90,7 @@ function BookmarkActions({
           <Button
             size="small"
             color="inherit"
-            startIcon={<HighlightOff />}
+            startIcon={<CancelOutlined />}
             onClick={handleDeleteButtonClicked}>
             {t('Delete')}
           </Button>
