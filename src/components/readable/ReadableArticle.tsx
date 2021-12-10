@@ -74,6 +74,7 @@ function ReadableArticle({ id, index, bookmarkResponse }: Props): JSX.Element {
     _event: React.ChangeEvent<HTMLInputElement>,
     checked: boolean,
   ) => {
+    // ! Should update bookmarkedAt?
     updateBookmark({
       id,
       index,
