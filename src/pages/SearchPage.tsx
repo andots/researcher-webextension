@@ -47,7 +47,6 @@ function SearchPage(): JSX.Element {
   // ! Scroll to top when state (SearchMode) changes
   useEffect(() => {
     scrollToTop();
-    console.log(searchMode);
   }, [searchMode]);
 
   // ! Initial fetch
