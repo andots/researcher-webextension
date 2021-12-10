@@ -1,6 +1,6 @@
 import type { SearchHit } from '@elastic/elasticsearch/api/types';
-import { PushPin } from '@mui/icons-material';
-import { Grid } from '@mui/material';
+import { Close, PushPin } from '@mui/icons-material';
+import { IconButton } from '@mui/material';
 
 import FlexBox from 'src/components/atoms/FlexBox';
 import TypographyText from 'src/components/atoms/TypographyText';
@@ -23,24 +23,19 @@ function PinnedReadLater({ hits }: Props): JSX.Element {
         <TypographyText text="Pinned Read Later" variant="h2" />
       </FlexBox>
 
-      <Grid
-        alignContent="stretch"
-        alignItems="stretch"
-        direction="row"
-        justifyContent="flex-start"
-        spacing={2}
-        container>
-        {hits.map((item) => {
-          if (item._source != null) {
-            return (
-              <Grid key={item._source.url} xs={12} item>
-                <SimpleItem searchHit={item} />
-              </Grid>
-            );
-          }
-          return;
-        })}
-      </Grid>
+      {hits.map((item) => {
+        if (item._source != null) {
+          return (
+            <FlexBox sx={{ position: 'relative', left: '-6px' }}>
+              <IconButton size="small" sx={{ marginRight: 1 }}>
+                <Close />
+              </IconButton>
+              <SimpleItem searchHit={item} />
+            </FlexBox>
+          );
+        }
+        return;
+      })}
     </FlexBox>
   );
 }
