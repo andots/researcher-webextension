@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
 import {
+  ArticleOutlined,
   BookmarkBorderOutlined,
   CancelOutlined,
-  PageviewOutlined,
   PushPin,
 } from '@mui/icons-material';
 import {
@@ -108,7 +108,7 @@ function ColumnCard({ id, index, bookmarkResponse }: BookmarkResponseDoc): JSX.E
 
         <FlexBox flexDirection="row">
           <IconButton size="small" onClick={handleGoReadable}>
-            <PageviewOutlined />
+            <ArticleOutlined />
           </IconButton>
           <Box mr={1} />
           <IconButton size="small" onClick={handleDeleteButtonClicked}>

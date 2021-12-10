@@ -4,6 +4,7 @@ import {
   CancelOutlined,
   PushPinOutlined,
   PushPin,
+  ArticleOutlined,
 } from '@mui/icons-material';
 import { Link, Box, Button, useTheme, useMediaQuery, IconButton } from '@mui/material';
 import { useTranslation } from 'react-i18next';
@@ -106,7 +107,7 @@ function BookmarkActions({
           <Button
             size="small"
             color="inherit"
-            startIcon={<PageviewOutlined />}
+            startIcon={<ArticleOutlined />}
             onClick={handleGoReadable}>
             {t('View')}
           </Button>
